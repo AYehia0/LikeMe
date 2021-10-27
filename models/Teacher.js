@@ -17,6 +17,7 @@ const teacherSchema = new Schema({
     required: true,
     trim: true,
     maxlength: 50,
+    unique: true,
   },
   dept: {
     type: String,
@@ -34,6 +35,13 @@ const teacherSchema = new Schema({
     type: Number,
     default: 0,
   },
+  reviews: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Review",
+      required: true,
+    },
+  ],
 })
 
 const Teacher = mongoose.model("Teacher", teacherSchema)
