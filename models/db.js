@@ -6,7 +6,7 @@ const DB_NAME = process.env.DB_NAME || "TEST_DB"
 const DB_URL = `mongodb://localhost:27017/${DB_NAME}`
 
 mongoose
-  .connect(dbURL, {
+  .connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     autoIndex: true,
