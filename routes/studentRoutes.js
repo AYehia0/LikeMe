@@ -6,6 +6,6 @@ const idMiddle = require("../middlewares/studentAuth")
 router.post("/student", controller.addStudent)
 
 // add review
-router.post("/add-review", idMiddle, controller.addReview)
+router.post("/add-review/:id", idMiddle, controller.addReview)
 
 module.exports = router
