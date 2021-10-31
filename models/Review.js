@@ -18,10 +18,13 @@ const reviewSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    maxlength: 200
   },
   rate: {
     type: Number,
     required: true,
+    min: 0,
+    max: 10,
   },
 })
 
