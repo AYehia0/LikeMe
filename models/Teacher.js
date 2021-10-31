@@ -34,14 +34,16 @@ const teacherSchema = new Schema({
   rate: {
     type: Number,
     default: 0,
+    min: 0,
+    max: 10
   },
-  reviews: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Review",
-      required: true,
-    },
-  ],
+  // reviews: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+  //     ref: "Review",
+  //     required: true,
+  //   },
+  // ],
 })
 
 const Teacher = mongoose.model("Teacher", teacherSchema)
