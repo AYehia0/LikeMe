@@ -6,5 +6,6 @@ const controller = require("../controller/teacherController")
 router.post("/add-teacher", controller.addTeacher)
 router.get("/get-reviews/:id", controller.getAllTeacherReviews)
 router.get("/rate/:id", controller.getTeacherRate)
+router.get("/all", controller.getAllTeachers)
 
 module.exports = router

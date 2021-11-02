@@ -90,6 +90,24 @@ const getTeacherRate = async (req, res) => {
       status: true,
       data: teacher.rate,
     })
+  } catch (e) {
+    res.send({
+      status: false,
+      data: e.message,
+    })
+  }
+}
+
+// showing all the teachers
+const getAllTeachers = async (req, res) => {
+  try {
+
+    const teachers = await Teacher.find()
+
+    res.send({
+      status: true,
+      data: teachers,
+    })
     
   } catch (e) {
     res.send({
@@ -97,10 +115,10 @@ const getTeacherRate = async (req, res) => {
       data: e.message,
     })
   }
-
 }
 module.exports = {
   addTeacher,
   getAllTeacherReviews, 
-  getTeacherRate
+  getTeacherRate,
+  getAllTeachers
 }
